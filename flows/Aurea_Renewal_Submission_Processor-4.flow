@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Initiate_renewal_opportunity_synchronisation</name>
+        <label>Initiate renewal opportunity synchronisation</label>
+        <locationX>242</locationX>
+        <locationY>408</locationY>
+        <actionName>aureaRenewalNotifications</actionName>
+        <actionType>apex</actionType>
+        <inputParameters>
+            <name>netsuiteIds</name>
+            <value>
+                <elementReference>$Record.AccountId</elementReference>
+            </value>
+        </inputParameters>
+    </actionCalls>
+    <decisions>
+        <name>Is_Executable</name>
+        <label>Is Executable?</label>
+        <locationX>374</locationX>
+        <locationY>288</locationY>
+        <defaultConnectorLabel>Don&apos;t Execute</defaultConnectorLabel>
+        <rules>
+            <name>Execute</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Label.v1aurearenewals__run_renewal_operation</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>TRUE</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Initiate_renewal_opportunity_synchronisation</targetReference>
+            </connector>
+            <label>Execute</label>
+        </rules>
+    </decisions>
+    <interviewLabel>Aurea Renewal Submission Processor {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Aurea Renewal Submission Processor</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+</Flow>

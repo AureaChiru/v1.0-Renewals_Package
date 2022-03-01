@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConnectedApp xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>chiranjeev.neelam@aurea.com</contactEmail>
+    <label>TSI Renewal Support SB</label>
+    <oauthConfig>
+        <callbackUrl>https://aurea--sfdev.my.salesforce.com/services/authcallback/TSI_Renewal_Support_SB</callbackUrl>
+        <consumerKey>3MVG9pRzvMkjMb6k_ZvVNQfaa25HvyMYb1CxjwllQW6dmFT68yjTmOzW016f3BL14MzzR72y4puzshCjQUTwj</consumerKey>
+        <scopes>Api</scopes>
+        <scopes>Full</scopes>
+        <scopes>RefreshToken</scopes>
+    </oauthConfig>
+</ConnectedApp>
